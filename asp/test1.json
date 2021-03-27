@@ -1,0 +1,72 @@
+
+{ 
+    "_id" : ObjectId("5cdeb90e9f0ec670adf87317"), 
+    "nar" : [
+        "answer(environmentallyFriendly)", 
+        "sensitiveSlogan(environmentallyFriendly)", 
+        "notrelevant(environmentallyFriendly)"
+    ], 
+    "example" : NumberInt(1), 
+    "pos" : [
+        "unethical(environmentallyFriendly)"
+    ]
+}
+{ 
+    "_id" : ObjectId("5cdeb90e9f0ec670adf87318"), 
+    "nar" : [
+        "answer(xxx)", 
+        "sensitiveSlogan(xxx)", 
+        "notrelevant(xxx)"
+    ], 
+    "example" : NumberInt(2), 
+    "pos" : [
+        "unethical(xxx)"
+    ]
+}
+{ 
+    "_id" : ObjectId("5cdeb90e9f0ec670adf87319"), 
+    "nar" : [
+        "answer(yyy)", 
+        "sensitiveSlogan(yyy)", 
+        "notrelevant(yyy)"
+    ], 
+    "example" : NumberInt(3), 
+    "pos" : [
+        "unethical(yyy)"
+    ]
+}
+{ 
+    "_id" : ObjectId("5cdeb90e9f0ec670adf8731a"), 
+    "nar" : [
+        "answer(aaa)", 
+        "sensitiveSlogan(aaa)", 
+        "notrelevant(aaa)"
+    ], 
+    "example" : NumberInt(4), 
+    "pos" : [
+        "unethical(aaa)"
+    ]
+}
+{ 
+    "_id" : ObjectId("5cdeb90e9f0ec670adf8731b"), 
+    "nar" : [
+        "answer(zzz)", 
+        "notsensitiveSlogan(zzz)", 
+        "relevant(zzz)"
+    ], 
+    "example" : NumberInt(6), 
+    "pos" : [
+
+    ]
+}
+{ 
+    "_id" : ObjectId("5cdeb90e9f0ec670adf8731c"), 
+    "nar" : [
+        "answer(bbb)", 
+        "sensitiveSlogan(bbb)", 
+        "relevant(bbb)"
+    ], 
+    "example" : NumberInt(5), 
+    "pos" : [
+    ]
+}

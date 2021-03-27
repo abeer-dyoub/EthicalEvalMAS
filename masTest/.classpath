@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry excluding="**/*.asl" kind="src" path="src/agt"/>
+	<classpathentry excluding="*.ptl" kind="src" path="src/int"/>
+	<classpathentry excluding="*.xml" kind="src" path="src/org"/>
+	<classpathentry kind="src" path="src/env"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.USER_LIBRARY/JaCaMo"/>
+	<classpathentry kind="lib" path="/usr/local/sicstus4.2.3/bin/sp-4.2.3/sicstus-4.2.3/bin/prologbeans.jar"/>
+	<classpathentry kind="lib" path="/usr/local/sicstus4.2.3/lib/sicstus-4.2.3/bin/prologbeans.jar"/>
+	<classpathentry kind="output" path="bin/classes"/>
+</classpath>

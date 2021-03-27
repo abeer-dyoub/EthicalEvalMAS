@@ -1,0 +1,71 @@
+/*
+    masTest
+    ---------------------------
+
+    JaCaMo Application File
+
+    This file defines the initial state of the MAS (initial agents, environment, organisation, ....)
+
+    (see jacamo/doc/jcm.html for more information about what can be defined in this file)
+
+    JaCaMo <VERSION>
+    <DATE>
+*/
+
+mas masTest {
+
+  agent client : client.asl {
+    	
+    	focus: jacamo.gui1
+
+    }
+    agent employee   : employee.asl {
+    	focus: jacamo.gui2
+
+    }
+      agent trans: trans.asl{
+   	focus: jacamo.gui3
+   }
+    agent textExtractor  : textExtractor.asl {
+    	focus: jacamo.gui2
+
+    }
+     agent ethicalEvaluator  : ethicalEval.asl {
+    	focus: jacamo.gui4 
+    	focus: jacamo.gui5
+
+    }
+      agent monitor  : monitor.asl {
+    	focus: jacamo.gui4
+
+    }
+
+    
+    workspace jacamo {
+        artifact gui1: masTest.ClientGUI()
+         artifact gui2: masTest.EmpGUI()
+          artifact gui3: masTest.TransGUI()
+          artifact gui4: masTest.EthicalEvalGUI()
+          artifact gui5: masTest.LearnerGUI()
+    }
+
+   	 organisation mastest_org: otext.xml {       // the organisational entity is mastest_org from spec otext.xml
+    	group mas_chat: chat {          // instance group (mas_chat) from spec chat
+    		responsible-for: mas_eng     // that will be responsible for the execution of scheme chat_sch (defined below)
+    		players: client clt,          // the roles of the agents in this group
+    		         employee emp,   		      
+    		         textExtractor txtExtract,
+    		         trans transs,
+    		         ethicalEvaluator etheval,
+    		         monitor monitoring
+    		        
+
+    		debug                          // starts the organisational inspector
+    	}
+    	scheme mas_eng: chat_sch {      // instance scheme (mas_eng) from spec chat_sch
+    		debug
+    	}
+    } 
+   
+  }
+

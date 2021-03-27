@@ -1,0 +1,11 @@
+clingo version 4.2.1
+Reading from ...r/eclipse-workspace/MASnew/asp/fact.lp
+Solving...
+Answer: 1
+answer(environmentallyFriendly(product1)) product(product1) sensitiveSlogan(environmentallyFriendly(product1)) notrelevant(environmentallyFriendly(product1))
+SATISFIABLE
+
+Models       : 1+    
+Calls        : 1
+Time         : 0.001s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.000s

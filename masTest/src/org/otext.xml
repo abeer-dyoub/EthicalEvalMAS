@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?xml-stylesheet href="http://moise.sourceforge.net/xml/os.xsl" type="text/xsl" ?>
+
+<organisational-specification
+    id="otext"
+    os-version="0.8"
+
+    xmlns='http://moise.sourceforge.net/os'
+    xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+    xsi:schemaLocation='http://moise.sourceforge.net/os
+                        http://moise.sourceforge.net/xml/os.xsd' >
+
+<structural-specification>
+
+<role-definitions>
+    <role id="clt" />
+    <role id="emp" />
+    <role id="txtExtract" />
+    <role id="transs" />
+    <role id="etheval" />
+    <role id="monitoring" />
+    
+ 
+</role-definitions>
+
+<group-specification id="chat">
+    <roles>
+        <role id="clt" min="1" max="1"/>
+        <role id="emp" min="1" max="1"/>
+        <role id="transs" min="1" max="1"/>
+        <role id="txtExtract" min="1" max="1"/>
+        <role id="etheval" min="1" max="2"/>
+         <role id="monitoring" min="1" max="1"/>
+
+    </roles>
+
+    <links>
+       <link from="clt" to="emp" type="communication"     scope="intra-group" bi-dir="false"/>
+       <link from="emp" to="clt" type="communication" scope="intra-group" bi-dir="false"/>
+       <link from="emp" to="txtExtract" type="communication" scope="intra-group" bi-dir="true"/>
+       <link from="txtExtract" to="transs" type="communication" scope="intra-group" bi-dir="true"/>
+       <link from="transs" to="etheval" type="communication" scope="intra-group" bi-dir="true"/>
+       <link from="etheval" to="monitoring" type="communication" scope="intra-group" bi-dir="true"/>
+         <link from="monitoring" to="emp" type="authority" scope="intra-group" bi-dir="false"/>
+ 
+    </links>
+
+</group-specification>
+</structural-specification>
+
+<functional-specification>
+    <scheme id="chat_sch">
+        <goal id="chat_goal">
+            <plan operator="sequence">
+                <goal id="request"    ttf="2 minutes" ds="description goal1"/>
+                <goal id="response"    ttf="2 minutes" ds="description goal2"/>
+                 <goal id="extract"    ttf="2 minutes" ds="description goal3"/>
+                  <goal id="translate"    ttf="2 minutes" ds="description goal4"/>
+                   <goal id="evaluate"    ttf="2 minutes" ds="description goal5"/>
+                   <goal id="monitor"    ttf="2 minutes" ds="description goal6"/>
+
+            </plan>
+        </goal>
+
+        <mission id="mission1" min="1" max="1">
+            <goal id="request"/>
+        </mission>
+        <mission id="mission2" min="1" max="1">
+            <goal id="response"/>
+        </mission>
+                <mission id="mission3" min="1" max="1">
+            <goal id="extract"/>
+        </mission>
+       
+        <mission id="mission4" min="1" max="1">
+            <goal id="translate"/>
+        </mission>
+        <mission id="mission5" min="1" max="1">
+            <goal id="evaluate"/>
+        </mission>
+         <mission id="mission6" min="1" max="1">
+            <goal id="monitor"/>
+        </mission>
+ 
+    </scheme>
+</functional-specification>
+
+<normative-specification>
+    <!--
+       setup of Moise properties (e.g. role compatibility) handling (regimented or not)
+
+       when value = "fail", the platform ensures that the property is not broken (the property is thus regiment)
+       when value = "prohibition", violations are produced when the property is not followed by the agents
+       when value = "ignore", no norm is produced 
+
+       possible properties are defined in https://github.com/moise-lang/moise/blob/master/src/main/java/ora4mas/nopl/tools/os2nopl.java
+
+       some examples follow
+    -->
+    <!-- properties>
+        <property id="default_management"  value="fail" />
+        <property id="role_compatibility"  value="prohibition" />
+        <property id="mission_cardinality" value="prohibition" />
+    </properties-->
+
+    <!-- the norms of the application -->
+    <norm id="norm1" type="obligation" role="clt" mission="mission1"/>
+     <norm id="norm2" type="obligation" role="emp" mission="mission2"/>
+      <norm id="norm3" type="obligation" role="txtExtract" mission="mission3"/>
+       <norm id="norm4" type="obligation" role="transs" mission="mission4"/>
+        <norm id="norm5" type="obligation" role="etheval" mission="mission5"/>
+         <norm id="norm6" type="obligation" role="monitoring" mission="mission6"/>
+</normative-specification>
+
+</organisational-specification>
